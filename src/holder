@@ -1,0 +1,27 @@
+import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
+//import { **insert prototype name** } from './foodface.js';
+
+$(document).ready(function() {
+  $('#moodLocation').click(function() {
+    let city = $('#mood').val();
+    $('#mood').val("");
+    $.ajax({
+      url: `https://developers.zomato.com/api/v2.1/search?apikey=dbbf59bf991908cbdc0b18e63de1a1ff&city_id=286&cuisine_id=1`,
+      // url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=dbbf59bf991908cbdc0b18e63de1a1ff`,
+      type: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(response) {
+        $("#results").text("You should see some food here:");
+        $("#results").append("success.data");
+      },
+      error: function() {
+        $('#errors').text("There was an error processing your request. Please try again.")
+      }
+    });
+  });
+});
+// .attr

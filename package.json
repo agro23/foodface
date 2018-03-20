@@ -2,7 +2,7 @@
   "name": "foodface",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
     "start": "webpack --mode development; webpack-dev-server --open --mode development",
@@ -42,6 +42,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.1"
+    "popper.js": "^1.14.1",
+    "zomato": "^1.1.0"
   }
 }
